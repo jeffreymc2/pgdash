@@ -4,7 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import { Button } from "@/components/ui/button";
 import {
 	Form,
 	FormControl,
@@ -14,13 +13,18 @@ import {
 	FormLabel,
 	FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import {
+	Button,
+	Card,
+	TextInput,
+  } from 'flowbite-react';
 import { toast } from "@/components/ui/use-toast";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { cn } from "@/lib/utils";
 import { useTransition } from "react";
 import { loginWithEmailAndPassword } from "../actions";
 import { AuthTokenResponse } from "@supabase/supabase-js";
+import Link from "next/link";
 
 const FormSchema = z.object({
 	email: z.string().email(),
@@ -62,7 +66,23 @@ export default function AuthForm() {
 	}
 
 	return (
-		<div className="w-96">
+		<div className="mx-auto flex flex-col items-center justify-center px-2 pt-2 w-full sm:w-3/4 md:h-screen">
+		<Card
+				horizontal
+				imgAlt=""
+				imgSrc="https://vyrybefhmqnaxzfijbpl.supabase.co/storage/v1/object/public/other/max.jpg"
+				className="w-full md:max-w-[1200px] object-contain"
+				theme={{
+				root: {
+					children: "my-auto w-full gap-0 space-y- p-6 sm:p-8 lg:p-16",
+				},
+				img: {
+					horizontal: {
+					on: "hidden rounded-l-lg md:max-w-[900px] md:p-0 lg:block w-1/2",
+					},
+				},
+				}}
+			>
 			<Form {...form}>
 				<form
 					onSubmit={form.handleSubmit(onSubmit)}
@@ -75,7 +95,7 @@ export default function AuthForm() {
 							<FormItem>
 								<FormLabel>Email</FormLabel>
 								<FormControl>
-									<Input placeholder="shadcn" {...field} />
+									<TextInput placeholder="email" {...field} />
 								</FormControl>
 
 								<FormMessage />
@@ -89,7 +109,7 @@ export default function AuthForm() {
 							<FormItem>
 								<FormLabel>Password</FormLabel>
 								<FormControl>
-									<Input
+									<TextInput
 										placeholder="shadcn"
 										{...field}
 										type="password"
@@ -106,8 +126,8 @@ export default function AuthForm() {
 					/>
 					<Button
 						type="submit"
-						variant="outline"
 						className="w-full flex items-center gap-2"
+						color="blue"
 					>
 						Login{" "}
 						<AiOutlineLoading3Quarters
@@ -118,6 +138,10 @@ export default function AuthForm() {
 					</Button>
 				</form>
 			</Form>
+				<Link href={"/auth/register"}>
+				<p className="mt-5 text-sm text-blue-200">Not yet a member? Sign Up</p>
+				</Link>
+			</Card>
 		</div>
 	);
 }

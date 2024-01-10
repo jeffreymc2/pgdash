@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.18",
+    "@headlessui/tailwindcss": "^0.2.0",
+    "@heroicons/react": "^2.1.1",
     "@hookform/resolvers": "^3.3.2",
     "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-dialog": "^1.0.5",
@@ -22,17 +25,25 @@
     "@radix-ui/react-toast": "^1.1.5",
     "@supabase/ssr": "^0.0.10",
     "@supabase/supabase-js": "^2.38.4",
+    "@tremor/react": "^3.12.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "flowbite-react": "^0.7.2",
+    "heroicons": "^2.1.1",
     "next": "14.0.2",
     "next-themes": "^0.2.1",
     "react": "^18",
+    "react-apexcharts": "^1.4.1",
     "react-dom": "^18",
     "react-hook-form": "^7.48.2",
-    "react-icons": "^4.11.0",
+    "react-icons": "^4.12.0",
+    "react-sortablejs": "^6.1.4",
+    "sharp": "^0.33.1",
+    "svgmap": "^2.10.1",
     "tailwind-merge": "^2.0.0",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.22.4"
+    "zod": "^3.22.4",
+    "zustand": "^4.4.7"
   },
   "devDependencies": {
     "@types/node": "^20",

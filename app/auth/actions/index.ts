@@ -13,8 +13,26 @@ export async function loginWithEmailAndPassword(data: {
 	return JSON.stringify(result);
 }
 
+
+export async function signUpWithEmailAndPassword(data: {
+	email: string;
+	password: string;
+	confirm: string;
+}) {
+
+	const supabase = await createSupbaseServerClient();
+
+	const result = await supabase.auth.signUp({email: data.email, password: data.password} );
+	return JSON.stringify(result);
+	
+}
+
+
+
 export async function logout() {
 	const supabase = await createSupbaseServerClient();
 	await supabase.auth.signOut();
 	redirect("/auth");
 }
+
+

@@ -1,5 +1,5 @@
 import React from "react";
-import AuthForm from "./components/AuthForm";
+import RegisterForm from "../components/RegisterForm";
 import { readUserSession } from "@/lib/actions";
 import { redirect } from "next/navigation";
 
@@ -11,9 +11,7 @@ export default async function page() {
 	}
 	return (
 		<div className="flex items-center justify-center h-screen">
-			<AuthForm />
-			
+			<RegisterForm />
 		</div>
-		
 	);
 }
