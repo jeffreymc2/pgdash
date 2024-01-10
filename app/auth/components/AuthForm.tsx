@@ -138,8 +138,8 @@ export default function AuthForm() {
 					</Button>
 				</form>
 			</Form>
-				<Link href={"/auth/register"}>
-				<p className="mt-5 text-sm text-blue-200">Not yet a member? Sign Up</p>
+				<Link href={"/auth/register"} className="mt-5 text-sm text-blue-200">
+					Not yet a member? Sign Up
 				</Link>
 			</Card>
 		</div>

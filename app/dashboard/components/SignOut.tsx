@@ -14,7 +14,7 @@ export default function SignOut() {
 
 	return (
 		<form>
-			<p onClick={onClick}
+			<button onClick={onClick}
 				className="w-full flex items-center gap-2"
 				color="blue"
 			>
@@ -22,7 +22,7 @@ export default function SignOut() {
 				<AiOutlineLoading3Quarters
 					className={cn(" animate-spin", { hidden: !isPending })}
 				/>
-			</p>
+			</button>
 		</form>
 	);
 }

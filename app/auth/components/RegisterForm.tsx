@@ -180,8 +180,8 @@ export default function RegisterForm() {
 					</Button>
 				</form>
 			</Form>
-            <Link href={"/auth"}>
-				<p className="mt-5 text-sm text-blue-200">Already a member? Sign In</p>
+            <Link href={"/auth"} className="mt-5 text-sm text-blue-200">
+				Already a member? Sign In
 				</Link>
 			</Card>
 		</div>
